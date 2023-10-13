@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import Htag from "@/components/atoms/Htag";
 import Logo from "@/components/atoms/Logo";
 import NamePrice from "@/components/molecules/NamePrice";
+import MenuItem from "@/components/organisms/MenuItem";
 
 export default function Home() {
 
@@ -59,14 +60,30 @@ export default function Home() {
         <div className= {[styles["holdMeals"], styles["alignCenter"]].join(" ")}>
 
         {data && data.length > 0 && data.slice(0, 16).map((item, index) => (
-            <NamePrice
-              divClass="row"
-              secondDivClass="column"
-              thirdDivClass="column"
-              classesfirst=""
-              classessecond=""
-              textfirst={item.title}
-              textSecond={item.price}
+            // <NamePrice
+            //   divClass="row"
+            //   secondDivClass="column"
+            //   thirdDivClass="column"
+            //   classesfirst=""
+            //   classessecond=""
+            //   textfirst={item.title}
+            //   textSecond={item.price}
+            // />
+
+            // export default function MenuItem({mainDiv,divClass, secondDivClass, thirdDivClass, classesfirst, classessecond, textfirst, textSecond, descriptionRow, descriptionCol, descriptionClass, descriptionText}){
+            <MenuItem
+                mainDiv = "container"
+                divClass= "row"
+                secondDivClass= "col-9"
+                thirdDivClass= "col-3"
+                classesfirst= ""
+                classessecond= ""
+                textfirst={item.title}
+                textSecond={item.price}
+                descriptionRow = "row"
+                descriptionCol= "col-12"
+                descriptionClass= ""
+                descriptionText= {item.description}
             />
           ))}   
         </div>
