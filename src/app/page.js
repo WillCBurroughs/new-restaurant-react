@@ -75,8 +75,8 @@ export default function Home() {
                 textfirst={item.title}
                 textSecond={item.price}
                 descriptionRow = "row"
-                descriptionCol= "col-12"
-                descriptionClass= {styles.descriptionTextStyle}
+                descriptionCol= "col-12 flex-d text-wrap"
+                descriptionClass= {`${styles.descriptionTextStyle} overflow-wrap-break-word`}
                 descriptionText= {item.description}
             />
           ))}   

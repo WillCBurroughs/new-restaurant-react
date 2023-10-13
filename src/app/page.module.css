@@ -33,6 +33,12 @@
   display: flex;
 }
 
+@media (width: 760px) {
+  .holdCourse {
+    flex-wrap: nowrap;
+  }
+}
+
 .holdMeals {
   width: 100%;
   margin-top: 50px;
@@ -41,6 +47,7 @@
   display: flex; 
   flex-wrap: wrap; 
   overflow: hidden;
+  /* padding: 0 10px; */
 }
 
 .title {
@@ -91,7 +98,7 @@
 
 .descriptionTextStyle {
   color: #BCBABA;
-  font-size: 15px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -105,4 +112,8 @@
 .holdBottomText {
   color: #000;
   font-size: 20px;
+}
+
+.overflow-wrap-break-word {
+  overflow-wrap: break-word;
 }

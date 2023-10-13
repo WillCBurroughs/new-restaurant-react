@@ -15,7 +15,7 @@ export default function MenuItem({mainDiv, divClass, secondDivClass, thirdDivCla
         <div className= {descriptionRow}>
             <div className= {descriptionCol}>
                 <Htag 
-                    classes = {descriptionClass}
+                    classes = {`${descriptionClass}`}
                     text = {descriptionText}
                 ></Htag>
             </div>
