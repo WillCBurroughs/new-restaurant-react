@@ -1,5 +1,5 @@
-export default function Htag({classes}){
+export default function Htag({classes, text}){
     return (
-      <h1 className= {classes}> •The Codfather• </h1>
+      <h1 className= {classes}>{text}</h1>
     )
   }
