@@ -19,25 +19,33 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <div className={styles["restaurant-container"]}>
-         <Htag 
-            classes={styles.title}
+
+        <div className={styles["alignCenter"]}>
+
+          <div className={styles["restaurant-container"]}>
+          <Htag 
+              classes={styles.title}
+              text="•The Codfather•"
+          />
+          </div>
+
+            
+          <div className={styles["holdLogo"]}>
+            <Logo classes={styles["imageLogo"]} source="/img/Codfather.png" />
+          </div>
+
+        </div>
+
+        
+
+        <div className= {[styles["holdCourse"], styles["makeBlack"]].join(' ')}>
+        <Htag 
+            classes={styles.courseText}
+            text = "Main Course"
          />
         </div>
 
-        <div className= {styles["holdLogo"]}>
-          
-        <div className={styles["holdLogo"]}>
-          <Logo classes={styles["imageLogo"]} source="/img/Codfather.png" />
-        </div>
-
-        </div>
-
-        <div className= {[styles["holdCourse"], styles["makeBlack"]].join(' ')}>
-
-        </div>
-
-        <div className= {styles["holdMeals"]}>
+        <div className= {[styles["holdMeals"], styles["alignCenter"]].join(" ")}>
 
         </div>
 
