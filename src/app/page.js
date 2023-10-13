@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Htag from "@/components/atoms/Htag";
 import Logo from "@/components/atoms/Logo";
+import NamePrice from "@/components/molecules/NamePrice";
 
 export default function Home() {
 
@@ -57,9 +58,17 @@ export default function Home() {
 
         <div className= {[styles["holdMeals"], styles["alignCenter"]].join(" ")}>
 
-        {data && data.length > 0 && data.slice(0, 20).map((item, index) => (
-      <Htag key={index} classes={styles.courseText} text={item.title} />
-     ))}     
+        {data && data.length > 0 && data.slice(0, 16).map((item, index) => (
+            <NamePrice
+              divClass="row"
+              secondDivClass="column"
+              thirdDivClass="column"
+              classesfirst=""
+              classessecond=""
+              textfirst={item.title}
+              textSecond={item.price}
+            />
+          ))}   
         </div>
 
 
