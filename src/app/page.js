@@ -7,6 +7,7 @@ import Htag from "@/components/atoms/Htag";
 import Logo from "@/components/atoms/Logo";
 import NamePrice from "@/components/molecules/NamePrice";
 import MenuItem from "@/components/organisms/MenuItem";
+import BottomMenu from "@/components/molecules/bottomMenu";
 
 export default function Home() {
 
@@ -57,37 +58,39 @@ export default function Home() {
          />
         </div>
 
-        <div className= {[styles["holdMeals"], styles["alignCenter"]].join(" ")}>
+        {/* <div className= {[styles["holdMeals"], styles["notalignCenter"]].join(" ")}> */}
+        <div className={styles.holdMeals}>
+        {data && data.length > 0 && data.slice(0, 20).map((item, index) => (
 
-        {data && data.length > 0 && data.slice(0, 16).map((item, index) => (
-            // <NamePrice
-            //   divClass="row"
-            //   secondDivClass="column"
-            //   thirdDivClass="column"
-            //   classesfirst=""
-            //   classessecond=""
-            //   textfirst={item.title}
-            //   textSecond={item.price}
-            // />
 
             // export default function MenuItem({mainDiv,divClass, secondDivClass, thirdDivClass, classesfirst, classessecond, textfirst, textSecond, descriptionRow, descriptionCol, descriptionClass, descriptionText}){
             <MenuItem
-                mainDiv = "container"
+                key={index}
+                mainDiv = "container marginTop"
                 divClass= "row"
                 secondDivClass= "col-9"
                 thirdDivClass= "col-3"
-                classesfirst= ""
-                classessecond= ""
+                classesfirst= {styles.menuTitle}
+                classessecond= {styles.price}
                 textfirst={item.title}
                 textSecond={item.price}
                 descriptionRow = "row"
                 descriptionCol= "col-12"
-                descriptionClass= ""
+                descriptionClass= {styles.descriptionTextStyle}
                 descriptionText= {item.description}
             />
           ))}   
         </div>
 
+       <BottomMenu 
+            divClass = {styles.holdBottom}
+            firstText = "348 E Main Street"
+            textSecond = "The Codfather"
+            ThirdText = " &nbsp; M-F 9:00AM - 8:00PM"
+            textClass = {styles.holdBottomText}
+       />
+
+          {/* BottomMenu({divClass, firstText, secondText, ThirdText, textClass}) */}
 
       </main>
     </>
