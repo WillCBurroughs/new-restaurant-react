@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -8,13 +8,23 @@ import Logo from "@/components/atoms/Logo";
 
 export default function Home() {
 
-  let getAxios = () => {
-    axios.get("https://www.jsonkeeper.com/b/MDXW").then(response => {
-      console.log(response);
-    });
-  }
+  let [data, setData] = useState(null);
 
-  getAxios()
+  useEffect(() => {
+    let fetchData = async () => {
+      try {
+        const response = await axios.get("https://www.jsonkeeper.com/b/MDXW");
+        setData(response.data); // Assuming the data is in response.data
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+  console.log("Data:", data);
 
   return (
     <>
@@ -47,6 +57,9 @@ export default function Home() {
 
         <div className= {[styles["holdMeals"], styles["alignCenter"]].join(" ")}>
 
+        {data && data.length > 0 && data.slice(0, 20).map((item, index) => (
+      <Htag key={index} classes={styles.courseText} text={item.title} />
+     ))}     
         </div>
 
 
