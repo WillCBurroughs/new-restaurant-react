@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 3rem;
   min-height: 100vh;
   background-color: aliceblue;
 }
@@ -23,7 +23,6 @@
 }
 
 .holdCourse {
-  margin-top: -400px;
   width: 100%;
   border-top: solid 2px black;
   height: 80px;
@@ -36,6 +35,12 @@
 
 .holdMeals {
   width: 100%;
+  margin-top: 50px;
+  height: 80vh;
+  flex-direction: column;
+  display: flex; 
+  flex-wrap: wrap; 
+  overflow: hidden;
 }
 
 .title {
@@ -63,6 +68,41 @@
 .alignCenter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.menuTitle {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.price {
+  color: #24BAEA;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.descriptionTextStyle {
+  color: #BCBABA;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.holdBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.holdBottomText {
+  color: #000;
+  font-size: 20px;
 }
